@@ -1,0 +1,21 @@
+#!name=YTAdB
+#!desc=YT Ad Block
+
+[Rule]
+URL-REGEX,^https?://m\.youtube\.com/api/stats/qoe\?.*,REJECT
+URL-REGEX,^https?://m\.youtube\.com/generate_204\?.*,REJECT
+URL-REGEX,^https?://m\.youtube\.com/ptracking\?.*,REJECT
+URL-REGEX,^https?://m\.youtube\.com/youtubei/v1/log_event\?.*,REJECT
+
+URL-REGEX,^https?://www\.youtube\.com/pagead/paralleladview\?.*,REJECT
+URL-REGEX,^https?://www\.youtube\.com/pagead/viewthroughconversion/962985656/\?.*,REJECT
+
+URL-REGEX,^https?://www\.google\.com/pagead/1p-user-list/962985656/\?.*,REJECT
+URL-REGEX,^https?://play\.google\.com/log\?.*,REJECT
+
+URL-REGEX,^https?://googleads\.g\.doubleclick\.net/pagead/adview\?.*,REJECT
+URL-REGEX,^https?://googleads\.g\.doubleclick\.net/pagead/id$,REJECT
+URL-REGEX,^https?://static\.doubleclick\.net/instream/ad_status\.js$,REJECT
+
+[MITM]
+hostname = %APPEND% *.youtube.com, *.google.com, googleads.g.doubleclick.net
