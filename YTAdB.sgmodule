@@ -3,6 +3,7 @@
 
 [Rule]
 URL-REGEX,^https?://m\.youtube\.com/api/stats/qoe\?.*,REJECT
+URL-REGEX,^https?://m\.youtube\.com/api/stats/delayplay\?.*,REJECT
 URL-REGEX,^https?://m\.youtube\.com/generate_204\?.*,REJECT
 URL-REGEX,^https?://m\.youtube\.com/ptracking\?.*,REJECT
 URL-REGEX,^https?://m\.youtube\.com/youtubei/v1/log_event\?.*,REJECT
