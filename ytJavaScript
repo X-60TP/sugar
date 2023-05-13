@@ -1,0 +1,287 @@
+// ==UserScript==
+// @name         YouTube
+// @description  Enhance YouTube player with useful features
+// @license      MIT
+// @icon         https://www.youtube.com/s/desktop/3c6d6d60/img/favicon.ico
+// @grant        none
+// @run-at       document-start
+// @noframes
+// @compatible   firefox >=52
+// @compatible   chrome >=55
+// ==/UserScript==
+
+(() => {
+  "use strict";
+
+  /* =============== */
+  /* Utility Methods */
+  /* =============== */
+
+  const isNil = (value) => value == null;
+  const isFunction = (value) => typeof value === "function";
+  const isObject = (value) => value != null && typeof value === "object";
+  const isString = (value) => typeof value === "string";
+  const isNumber = (value) => typeof value === "number";
+  const isArray = Array.isArray;
+  const isHTMLElement = (value) =>
+    isObject(value) && value.nodeType === Node.ELEMENT_NODE;
+  const isVideoPlayer = (value) =>
+    isHTMLElement(value) && value.nodeName === "VIDEO" && value.hasAttribute("src");
+  const isLivePlayer = (value) =>
+    isVideoPlayer(value) && value.hasAttribute("live");
+  const isPlaylistPlayer = (value) =>
+    isVideoPlayer(value) && value.classList.contains("playlist-video-player");
+  const isMiniplayer = (value) =>
+    isHTMLElement(value) && value.classList.contains("ytd-miniplayer");
+  const isPopupPlayer = (value) =>
+    isHTMLElement(value) && value.classList.contains("ytp-popup");
+  const isWatchPage = () => /\/watch\?.+/.test(location.pathname);
+  const isWatchLaterPage = () => /\/playlist\?list=WL/.test(location.href);
+  const isSearchPage = () => /\/results\?/.test(location.pathname);
+  const isSubscriptionsPage = () => /\/feed\/subscriptions/.test(location.pathname);
+  const isChannelPage = () => /\/channel\/.+/.test(location.pathname);
+  const isUserPage = () => /\/user\/.+/.test(location.pathname);
+  const isSettingsPage = () => /\/account\/.+\?action_edit/.test(location.pathname);
+  const isMobileDevice = () =>
+    /Mobi|Android/i.test(navigator.userAgent) && !/iPad/i.test(navigator.userAgent);
+
+  const create = (tag, attrs, ...children) => {
+    const element = document.createElement(tag);
+    if (isObject(attrs)) {
+      Object.keys(attrs).forEach((key) => {
+        const value = attrs[key];
+        if (isString(value) || isNumber(value)) {
+          element.setAttribute(key, value.toString());
+        } else if (value === true) {
+          element.setAttribute(key, "");
+        }
+      });
+    }
+    children.forEach((child) => {
+      if (isString(child)) {
+        element.appendChild(document.createTextNode(child));
+      } else if (isHTMLElement(child)) {
+        element.appendChild(child);
+      }
+    });
+    return element;
+  };
+
+  const queryOne = (selector, context = document) => context.querySelector(selector);
+  const queryAll = (selector, context = document) => context.querySelectorAll(selector);
+
+  const addStyle = (cssText) => {
+    const style = create("style", { type: "text/css" });
+    style.appendChild(document.createTextNode(cssText));
+    queryOne("head").appendChild(style);
+  };
+
+  const addScript = (src, attrs = {}) => {
+    const script = create("script", attrs);
+    script.src = src;
+    queryOne("head").appendChild(script);
+  };
+
+  const addEventListener = (target, type, listener, options) => {
+    target.addEventListener(type, listener, options);
+    return () => target.removeEventListener(type, listener, options);
+  };
+
+  const debounce = (fn, delay = 100, options = {}) => {
+    let timeoutId = null;
+    const { leading = false, trailing = true } = options;
+    const debounced = (...args) => {
+      if (timeoutId != null) {
+        clearTimeout(timeoutId);
+      }
+      if (leading && timeoutId == null) {
+        fn.apply(this, args);
+      }
+      timeoutId = setTimeout(() => {
+        if (trailing) {
+          fn.apply(this, args);
+        }
+        timeoutId = null;
+      }, delay);
+    };
+    debounced.cancel = () => clearTimeout(timeoutId);
+    return debounced;
+  };
+
+  const throttle = (fn, delay = 100, options = {}) => {
+    let lastArgs = null;
+    let lastTime = null;
+    let timeoutId = null;
+    const { leading = true, trailing = true } = options;
+    const throttled = (...args) => {
+      const now = Date.now();
+      if (lastTime == null && leading) {
+        fn.apply(this, args);
+        lastTime = now;
+      } else {
+        lastArgs = args;
+        if (timeoutId == null) {
+          timeoutId = setTimeout(() => {
+            if (trailing) {
+              fn.apply(this, lastArgs);
+              lastTime = Date.now();
+            }
+            timeoutId = null;
+          }, delay - (now - lastTime));
+        }
+      }
+    };
+    throttled.cancel = () => clearTimeout(timeoutId);
+    return throttled;
+  };
+
+  /* ==================== */
+  /* YouTube API Utilities */
+  /* ==================== */
+
+  const getAPI = (callback) => {
+    const onAPIReady = () => callback(window.YT);
+    if (window.YT != null) {
+      onAPIReady();
+    } else {
+      const previousOnYouTubeIframeAPIReady = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => {
+        if (isFunction(previousOnYouTubeIframeAPIReady)) {
+          previousOnYouTubeIframeAPIReady();
+        }
+        onAPIReady();
+      };
+      addScript("https://www.youtube.com/iframe_api");
+    }
+  };
+
+  const getPlayerById = (id) => {
+    const player = window.document.getElementById(id);
+    return isVideoPlayer(player) ? player : null;
+  };
+
+  const getPlayersByQuery = (selector) => {
+    const players = queryAll(selector);
+    return Array.from(players).filter(isVideoPlayer);
+  };
+
+  const getActivePlayer = () => {
+    const activePlayers = getPlayersByQuery(
+      "video.html5-main-video, video.video-stream.html5-streaming"
+    );
+    if (activePlayers.length === 1) {
+      return activePlayers[0];
+    } else {
+      return null;
+    }
+  };
+
+  const getMiniplayer = () => {
+    const miniplayer = queryOne(".ytd-miniplayer");
+    return isMiniplayer(miniplayer) ? miniplayer : null;
+  };
+
+  const getPopupPlayer = () => {
+    const popupPlayer = queryOne(".ytp-popup");
+    return isPopupPlayer(popupPlayer) ? popupPlayer : null;
+  };
+
+  const getPlaylistPlayer = () => {
+    const playlistPlayer = queryOne(".playlist-video-player");
+    return isPlaylistPlayer(playlistPlayer) ? playlistPlayer : null;
+  };
+
+  const getPlayerState = (player) => {
+    if (player != null) {
+      return player.getPlayerState();
+    }
+    return -1;
+  };
+
+  const getVideoId = (player) => {
+    if (player != null) {
+      const { videoUrl } = player.getVideoData();
+      const match = videoUrl.match(/v=([^&]+)/);
+      return match != null ? match[1] : null;
+    }
+    return null;
+  };
+
+  const getVideoTitle = (player) => {
+    if (player != null) {
+      return player.getVideoData().title;
+    }
+    return null;
+  };
+
+  const getVideoAuthor = (player) => {
+    if (player != null) {
+      return player.getVideoData().author;
+    }
+    return null;
+  };
+
+  const getVideoDuration = (player) => {
+    if (player != null) {
+      return player.getDuration();
+    }
+    return null;
+  };
+
+  const getVideoCurrentTime = (player) => {
+    if (player != null) {
+      return player.getCurrentTime();
+    }
+    return null;
+  };
+
+  const getVideoPlaybackRate = (player) => {
+    if (player != null) {
+      return player.getPlaybackRate();
+    }
+    return null;
+  };
+
+  const setVideoPlaybackRate = (player, rate) => {
+    if (player != null) {
+      player.setPlaybackRate(rate);
+    }
+  };
+
+  const seekTo = (player, seconds, allowSeekAhead) => {
+    if (player != null) {
+      player.seekTo(seconds, allowSeekAhead);
+    }
+  };
+
+  const playVideo = (player) => {
+    if (player != null) {
+      player.playVideo();
+    }
+  };
+
+  const pauseVideo = (player) => {
+    if (player != null) {
+      player.pauseVideo();
+    }
+  };
+
+  const stopVideo = (player) => {
+    if (player != null) {
+      player.stopVideo();
+    }
+  };
+
+  const muteVideo = (player) => {
+    if (player != null) {
+      player.mute();
+    }
+  };
+
+  const unmuteVideo = (player) => {
+    if (player != null) {
+      player.unMute();
+    }
+  };
+
+  const set
