@@ -3,6 +3,11 @@ DOMAIN,googleads.g.doubleclick.net
 DOMAIN,ade.googlesyndication.com
 DOMAIN,pagead2.googlesyndication.com
 URL-REGEX,^https://s\.youtube\.com/api/stats/qoe
+# https://s.youtube.com/api/stats/qoe
 URL-REGEX,^https://www\.youtube\.com/pagead
+# https://www.youtube.com/pagead/interaction/
+# https://www.youtube.com/pagead/adview
 URL-REGEX,^https://www\.youtube\.com/ptracking
+# https://www.youtube.com/ptracking
 URL-REGEX,^https://youtubei\.googleapis\.com/youtubei/.+(ad|log)
+# https://youtubei.googleapis.com/youtubei/v1/log_event
