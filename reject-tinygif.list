@@ -1,2 +1,2 @@
 # youtube
-^https:\/\/[\w-]+\.googlevideo\.com\/.+?(?:ctier(?:=|\/)L|oad=)
+URL-REGEX,^https:\/\/[\w-]+\.googlevideo\.com\/.+?(?:ctier(?:=|\/)L|oad=)
