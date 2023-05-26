@@ -1,0 +1,2 @@
+# youtube
+^https:\/\/[\w-]+\.googlevideo\.com\/.+?(?:ctier(?:=|\/)L|oad=)
