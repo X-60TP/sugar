@@ -1,5 +1,5 @@
 # google
-DOMAIN,ad.doubeclick.net
+DOMAIN-SUFFIX,doubeclick.net
 DOMAIN,www.googleadservices.com
 DOMAIN-SUFFIX,googlesyndication.com
 # youtube
