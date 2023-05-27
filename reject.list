@@ -3,6 +3,7 @@ DOMAIN-SUFFIX,doubeclick.net
 DOMAIN,www.googleadservices.com
 DOMAIN-SUFFIX,googlesyndication.com
 # youtube
-URL-REGEX,^https:\/\/www\.youtube\.com.+?(?:pagead|ptracking|activeview|ads)
-URL-REGEX,^https:\/\/s\.youtube\.com\/api\/stats\/.+?(?:adcontext|adformat)
+URL-REGEX,^https:\/\/(?:www|m)\.youtube\.com.+?(?:pagead|ptracking|activeview|ads)
+URL-REGEX,^https:\/\/(?:s|m)\.youtube\.com\/api\/stats\/.+?(?:adcontext|adformat)
 URL-REGEX,^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1.+?(?:log_event|ad_break)
+URL-REGEX,^https:\/\/m\.youtube\.com\/youtubei\/v1.+?(?:log_event|ad_break)
