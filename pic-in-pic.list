@@ -1,2 +1,3 @@
 # youtube us
 URL-REGEX,^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player\?key=
+URL-REGEX,^https:\/\/m\.youtube\.com\/youtubei\/v1\/player\?key=
