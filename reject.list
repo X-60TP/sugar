@@ -7,3 +7,12 @@ URL-REGEX,^https:\/\/(?:www|m)\.youtube\.com.+?(?:pagead|ptracking|activeview|ad
 URL-REGEX,^https:\/\/(?:s|m)\.youtube\.com\/api\/stats\/.+?(?:adcontext|adformat)
 URL-REGEX,^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1.+?(?:log_event|ad_break)
 URL-REGEX,^https:\/\/m\.youtube\.com\/youtubei\/v1.+?(?:log_event|ad_break)
+
+# sessions.bugsnag.com
+
+# 民生
+DOMAIN,sdk.open.talk.getui.com
+DOMAIN,sdk.open.talk.getui.net
+DOMAIN,sdk.open.talk.gepush.com
+# 43.231.145.10：5224
+# IP-CIDR,43.231.145.10/32
