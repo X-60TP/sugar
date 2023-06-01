@@ -292,9 +292,10 @@ DOMAIN,fcqzga.sbs
 DOMAIN,init.ess.apple.com
 DOMAIN,pds.ess.apple.com
 DOMAIN,pds-init.ess.apple.com
+
 DOMAIN,ca.iadsdk.apple.com
 DOMAIN,iadsdk.apple.com
-DOMAIN,iphone-ld.apple.com
+
 DOMAIN,aod.itunes.apple.com
 DOMAIN,bag.itunes.apple.com
 DOMAIN,init.itunes.apple.com
@@ -302,7 +303,10 @@ DOMAIN,p49-buy.itunes.apple.com
 DOMAIN,pd.itunes.apple.com
 DOMAIN,play.itunes.apple.com
 DOMAIN,radio-activity.itunes.apple.com
+
 DOMAIN,configuration.ls.apple.com
+
+DOMAIN,iphone-ld.apple.com
 DOMAIN,mesu.apple.com
 DOMAIN,ocsp2.apple.com
 DOMAIN,pancake.apple.com
@@ -316,6 +320,7 @@ DOMAIN,time.apple.com
 DOMAIN,weather-data.apple.com
 DOMAIN,www.apple.com
 DOMAIN,xp.apple.com
+
 DOMAIN,mask.icloud.com
 DOMAIN,setup.icloud.com
 
