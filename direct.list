@@ -288,39 +288,75 @@ DOMAIN,ems.youku.com
 DOMAIN,fcqzga.sbs
 
 # apple
+DOMAIN,www.apple.com
+
+DOMAIN,amp-api-edge.apps.apple.com
+
+# itunes & music
+DOMAIN,itunes.apple.com
+DOMAIN,aod.itunes.apple.com
+DOMAIN,bag.itunes.apple.com
+DOMAIN,client-api.itunes.apple.com
+DOMAIN,inappcheck.itunes.apple.com
+DOMAIN,init.itunes.apple.com
+DOMAIN,musicstatus.itunes.apple.com
+DOMAIN,mvod.itunes.apple.com
+DOMAIN,p49-buy.itunes.apple.com
+DOMAIN,pd.itunes.apple.com
+DOMAIN,play.itunes.apple.com
+DOMAIN,radio-activity.itunes.apple.com
+DOMAIN,se2.itunes.apple.com
+DOMAIN,sp.itunes.apple.com
+DOMAIN,music.apple.com
+DOMAIN,amp-api.music.apple.com
+DOMAIN,amp-api-edge.music.apple.com
+DOMAIN,amp-api.shazam.apple.com
 
 DOMAIN,init.ess.apple.com
 DOMAIN,pds.ess.apple.com
 DOMAIN,pds-init.ess.apple.com
 
+# ad
 DOMAIN,ca.iadsdk.apple.com
 DOMAIN,iadsdk.apple.com
+DOMAIN,api-adservices.apple.com
 
-DOMAIN,aod.itunes.apple.com
-DOMAIN,bag.itunes.apple.com
-DOMAIN,init.itunes.apple.com
-DOMAIN,p49-buy.itunes.apple.com
-DOMAIN,pd.itunes.apple.com
-DOMAIN,play.itunes.apple.com
-DOMAIN,radio-activity.itunes.apple.com
 
+
+DOMAIN,configuration.apple.com
 DOMAIN,configuration.ls.apple.com
 
+DOMAIN,gdmf.apple.com
 DOMAIN,iphone-ld.apple.com
 DOMAIN,mesu.apple.com
 DOMAIN,ocsp2.apple.com
 DOMAIN,pancake.apple.com
 DOMAIN,device-config.pcms.apple.com
+
+DOMAIN,9-courier.push.apple.com
 DOMAIN,init.push.apple.com
+
+# ?
 DOMAIN,proxy.safebrowsing.apple
+
+# cn
 DOMAIN,api.smoot.apple.cn
+DOMAIN,cl2-cn.apple.com
+DOMAIN,gs-loc-cn.apple.com
+DOMAIN,gspe19-cn-ssl.ls.apple.com
+DOMAIN,gspe21-ssl.ls.apple.com
+
 DOMAIN,smp-device-content.apple.com
 DOMAIN,testflight.apple.com
 DOMAIN,time.apple.com
 DOMAIN,weather-data.apple.com
-DOMAIN,www.apple.com
+DOMAIN,weather-map.apple.com
+
 DOMAIN,xp.apple.com
 
+DOMAIN,sequoia.cdn-apple.com
+
+# icloud
 DOMAIN,mask.icloud.com
 DOMAIN,setup.icloud.com
 
