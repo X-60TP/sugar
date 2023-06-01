@@ -46,22 +46,22 @@ IP-CIDR,111.19.206.250/32
 IP-CIDR,111.2.90.234/32
 IP-CIDR,111.3.78.251/32
 IP-CIDR,111.31.66.141/32
-111.32.133.252
-111.48.33.252
+IP-CIDR,111.32.133.252/32
 IP-CIDR,111.48.33.251/32
+IP-CIDR,111.48.33.252/32
 IP-CIDR,111.61.203.211/32
 IP-CIDR,111.62.167.194/32
-111.62.167.225
+IP-CIDR,111.62.167.225/32
 IP-CIDR,111.62.167.226/32
 IP-CIDR,111.63.206.7/32
-112.13.112.200
+IP-CIDR,112.13.112.200/32
 IP-CIDR,112.15.103.55/32
 IP-CIDR,112.29.211.177/32
 IP-CIDR,112.30.160.253/32
 IP-CIDR,112.30.160.254/32
 IP-CIDR,112.48.140.252/32
-117.185.236.129
-117.185.236.136
+IP-CIDR,117.185.236.129/32
+IP-CIDR,117.185.236.136/32
 IP-CIDR,120.220.46.55/32
 IP-CIDR,120.226.12.94/32
 IP-CIDR,163.181.35.224/32
@@ -70,16 +70,16 @@ IP-CIDR,17.188.143.251/32
 IP-CIDR,183.192.186.41/32
 IP-CIDR,183.192.186.42/32
 IP-CIDR,183.192.186.52/32
-183.194.226.209
+IP-CIDR,183.194.226.209/32
 IP-CIDR,183.204.90.126/32
 IP-CIDR,183.246.206.168/32
 IP-CIDR,183.246.206.169/32
 IP-CIDR,203.119.146.27/32
-203.119.169.169
+IP-CIDR,203.119.169.169/32
 IP-CIDR,203.119.169.241/32
 IP-CIDR,203.119.169.6/32
 IP-CIDR,203.119.169.80/32
-203.209.245.158
+IP-CIDR,203.209.245.158/32
 IP-CIDR,203.209.250.2/32
 IP-CIDR,203.209.250.8/32
 IP-CIDR,205.204.122.14/32
@@ -89,7 +89,7 @@ IP-CIDR,223.109.128.134/32
 IP-CIDR,223.109.146.130/32
 IP-CIDR,223.109.146.132/32
 IP-CIDR,223.109.146.162/32
-223.109.146.163
+IP-CIDR,223.109.146.163/32
 IP-CIDR,223.109.146.164/32
 IP-CIDR,223.109.146.199/32
 IP-CIDR,223.109.148.131/32
@@ -102,15 +102,15 @@ IP-CIDR,223.109.4.246/32
 IP-CIDR,223.109.4.248/32
 IP-CIDR,223.111.255.157/32
 IP-CIDR,223.111.255.158/32
-223.112.199.146
-223.112.199.147
-36.150.116.241
-36.150.116.242
-36.152.141.194
-36.152.141.244
+IP-CIDR,223.112.199.146/32
+IP-CIDR,223.112.199.147/32
+IP-CIDR,36.150.116.241/32
+IP-CIDR,36.150.116.242/32
+IP-CIDR,36.152.141.194/32
+IP-CIDR,36.152.141.244/32
 IP-CIDR,36.156.96.134/32
 IP-CIDR,36.156.96.135/32
-36.158.189.241
+IP-CIDR,36.158.189.241/32
 IP-CIDR,39.173.101.104/32
 IP-CIDR,39.173.101.117/32
 IP-CIDR,39.173.101.118/32
@@ -121,15 +121,15 @@ IP-CIDR,47.246.16.248/32
 IP-CIDR,47.246.16.249/32
 IP-CIDR,47.246.16.253/32
 IP-CIDR,59.82.113.188/32
-59.82.113.189
+IP-CIDR,59.82.113.189/32
 IP-CIDR,59.82.120.24/32
-59.82.120.240
+IP-CIDR,59.82.120.240/32
 IP-CIDR,59.82.121.114/32
 IP-CIDR,59.82.121.31/32
 IP-CIDR,59.82.121.62/32
 IP-CIDR,59.82.122.220/32
-59.82.122.32
-59.82.23.111
+IP-CIDR,59.82.122.32/32
+IP-CIDR,59.82.23.111/32
 IP-CIDR,59.82.23.172/32
 IP-CIDR,59.82.29.216/32
 IP-CIDR,59.82.29.218/32
@@ -139,40 +139,40 @@ IP-CIDR,59.82.33.214/32
 IP-CIDR,59.82.33.222/32
 IP-CIDR,59.82.33.227/32
 IP-CIDR,59.82.43.11/32
-59.82.43.12
+IP-CIDR,59.82.43.12/32
 IP-CIDR,59.82.43.130/32
 IP-CIDR,59.82.43.217/32
 IP-CIDR,59.82.43.22/32
-59.82.43.48
-59.82.43.9
+IP-CIDR,59.82.43.48/32
+IP-CIDR,59.82.43.9/32
 IP-CIDR,59.82.44.108/32
-59.82.44.13
+IP-CIDR,59.82.44.13/32
 IP-CIDR,59.82.44.136/32
-59.82.44.143
-59.82.44.15
-59.82.44.178
-59.82.44.230
+IP-CIDR,59.82.44.143/32
+IP-CIDR,59.82.44.15/32
+IP-CIDR,59.82.44.178/32
 IP-CIDR,59.82.44.221/32
+IP-CIDR,59.82.44.230/32
 IP-CIDR,59.82.44.68/32
 IP-CIDR,59.82.44.88/32
 IP-CIDR,59.82.44.98/32
 IP-CIDR,59.82.66.200/32
+
 
 DOMAIN,dj.1688.com
 DOMAIN,mindx.1688.com
 DOMAIN,search.1688.com
 DOMAIN,cdn.ynuf.aliapp.org
 DOMAIN,ynuf.aliapp.org
-DOMAIN,poplayer.template.alibaba.com
 DOMAIN,abtest.alibaba.com
 DOMAIN,orange-dc.alibaba.com
+DOMAIN,poplayer.template.alibaba.com
 DOMAIN,acs-mum.alibabachengdun.com
 DOMAIN,mum.alibabachengdun.com
 DOMAIN,umdc.alibabachengdun.com
 DOMAIN,alilang-intranet.alibaba-inc.com
 DOMAIN,aone.alibaba-inc.com
 DOMAIN,dinamicx.alibabausercontent.com
-DOMAIN,videotool.ossgw.alicdn.com
 DOMAIN,a1.alicdn.com
 DOMAIN,ald-lamp.alicdn.com
 DOMAIN,alpha.alicdn.com
@@ -187,14 +187,15 @@ DOMAIN,gw.alicdn.com
 DOMAIN,heic.alicdn.com
 DOMAIN,img.alicdn.com
 DOMAIN,lang.alicdn.com
+DOMAIN,videotool.ossgw.alicdn.com
 DOMAIN,ossgw.alicdn.com
 DOMAIN,polyfill.alicdn.com
 DOMAIN,wvcfg.alicdn.com
 DOMAIN,wwc.alicdn.com
-DOMAIN,loggw.alipay.com.cn
 DOMAIN,amdc.alipay.com
 DOMAIN,collect.alipay.com
 DOMAIN,inside-gateway.alipay.com
+DOMAIN,loggw.alipay.com.cn
 DOMAIN,loggw-ex.alipay.com
 DOMAIN,mdap.alipay.com
 DOMAIN,mobilegw.alipay.com
@@ -202,13 +203,13 @@ DOMAIN,render.alipay.com
 DOMAIN,tinyapp-gateway.alipay.com
 DOMAIN,gw.alipayobjects.com
 DOMAIN,tfs.alipayobjects.com
+DOMAIN,arms-retcode.aliyuncs.com
+DOMAIN,beacon-api.aliyuncs.com
 DOMAIN,wireless-app-log.cn-hangzhou.log.aliyuncs.com
 DOMAIN,client-upload.cn-shanghai.log.aliyuncs.com
 DOMAIN,go-lego-handler.oss-accelerate.aliyuncs.com
 DOMAIN,cbu-newer.oss-cn-hangzhou.aliyuncs.com
 DOMAIN,ele-jarvis.oss-cn-shanghai.aliyuncs.com
-DOMAIN,arms-retcode.aliyuncs.com
-DOMAIN,beacon-api.aliyuncs.com
 DOMAIN,dualstack-arestapi.amap.com
 DOMAIN,dispatcher.is.autonavi.com
 DOMAIN,sessions.bugsnag.com
@@ -218,14 +219,14 @@ DOMAIN,log1.cmpassport.com
 DOMAIN,log2.cmpassport.com
 DOMAIN,ocsp.digicert.com
 DOMAIN,px.effirst.com
-DOMAIN,air.tb.ele.me
-DOMAIN,adashx.ut.ele.me
-DOMAIN,h-adashx.ut.ele.me
 DOMAIN,app-monitor.ele.me
 DOMAIN,isaac.ele.me
 DOMAIN,mtop.ele.me
 DOMAIN,nt2.ele.me
+DOMAIN,air.tb.ele.me
 DOMAIN,tb.ele.me
+DOMAIN,adashx.ut.ele.me
+DOMAIN,h-adashx.ut.ele.me
 DOMAIN,cube.elemecdn.com
 DOMAIN,delivery.elemecdn.com
 DOMAIN,shadow.elemecdn.com
@@ -240,12 +241,10 @@ DOMAIN,is2-ssl.mzstatic.com
 DOMAIN,is3-ssl.mzstatic.com
 DOMAIN,cdn.rantu.com
 DOMAIN,xxl-log.rantu.com
+DOMAIN,df.tanx.com
+DOMAIN,ef-dongfeng.tanx.com
 DOMAIN,ifs.tanx.com
 DOMAIN,ifsk2.tanx.com
-df.tanx.com
-ef-dongfeng.tanx.com
-DOMAIN,csearch.cloudvideocdn.taobao.com
-DOMAIN,mamasearchad.cloudvideocdn.taobao.com
 DOMAIN,acs.m.taobao.com
 DOMAIN,adashx.m.taobao.com
 DOMAIN,aid.m.taobao.com
@@ -262,17 +261,19 @@ DOMAIN,openacs.m.taobao.com
 DOMAIN,rhdc-acs.m.taobao.com
 DOMAIN,web.m.taobao.com
 DOMAIN,ws-msgacs.m.taobao.com
-DOMAIN,h-adashx.ut.taobao.com
-DOMAIN,cloud.video.taobao.com
-DOMAIN,api-mayi.django.t.taobao.com
 DOMAIN,audid-api.taobao.com
+DOMAIN,csearch.cloudvideocdn.taobao.com
+DOMAIN,mamasearchad.cloudvideocdn.taobao.com
 DOMAIN,eco.taobao.com
 DOMAIN,err.taobao.com
 DOMAIN,error.taobao.com
 DOMAIN,fourier.taobao.com
 DOMAIN,huodong.taobao.com
 DOMAIN,nbsdk-baichuan.taobao.com
+DOMAIN,api-mayi.django.t.taobao.com
 DOMAIN,ugcdn.taobao.com
+DOMAIN,h-adashx.ut.taobao.com
+DOMAIN,cloud.video.taobao.com
 DOMAIN,taobao.com
 DOMAIN,t.taopiaopiao.com
 DOMAIN,err.tmall.com
@@ -281,41 +282,43 @@ DOMAIN,pages.tmall.com
 DOMAIN,x.tmall.com
 DOMAIN,applog.uc.cn
 DOMAIN,unilog.wostore.cn
-ems.youku.com
+DOMAIN,ems.youku.com
 
-fcqzga.sbs
+
+DOMAIN,fcqzga.sbs
 
 # apple
 
-# aod.itunes.apple.com
-# api.smoot.apple.cn
-# bag.itunes.apple.com
-# ca.iadsdk.apple.com
-# configuration.ls.apple.com
-# device-config.pcms.apple.com
-# iadsdk.apple.com
-# init.ess.apple.com
-# init.itunes.apple.com
-# init.push.apple.com
-# iphone-ld.apple.com
-# mask.icloud.com
-# mesu.apple.com
-# ocsp2.apple.com
-# p49-buy.itunes.apple.com
-# pancake.apple.com
-# pd.itunes.apple.com
-# pds.ess.apple.com
-# pds-init.ess.apple.com
-# play.itunes.apple.com
-# proxy.safebrowsing.apple
-# radio-activity.itunes.apple.com
-# setup.icloud.com
-# smp-device-content.apple.com
-# testflight.apple.com
-# time.apple.com
-# weather-data.apple.com
-# www.apple.com
-# xp.apple.com
+DOMAIN,init.ess.apple.com
+DOMAIN,pds.ess.apple.com
+DOMAIN,pds-init.ess.apple.com
+DOMAIN,ca.iadsdk.apple.com
+DOMAIN,iadsdk.apple.com
+DOMAIN,iphone-ld.apple.com
+DOMAIN,aod.itunes.apple.com
+DOMAIN,bag.itunes.apple.com
+DOMAIN,init.itunes.apple.com
+DOMAIN,p49-buy.itunes.apple.com
+DOMAIN,pd.itunes.apple.com
+DOMAIN,play.itunes.apple.com
+DOMAIN,radio-activity.itunes.apple.com
+DOMAIN,configuration.ls.apple.com
+DOMAIN,mesu.apple.com
+DOMAIN,ocsp2.apple.com
+DOMAIN,pancake.apple.com
+DOMAIN,device-config.pcms.apple.com
+DOMAIN,init.push.apple.com
+DOMAIN,proxy.safebrowsing.apple
+DOMAIN,api.smoot.apple.cn
+DOMAIN,smp-device-content.apple.com
+DOMAIN,testflight.apple.com
+DOMAIN,time.apple.com
+DOMAIN,weather-data.apple.com
+DOMAIN,www.apple.com
+DOMAIN,xp.apple.com
+DOMAIN,mask.icloud.com
+DOMAIN,setup.icloud.com
+
 
 
 
