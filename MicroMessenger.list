@@ -9,11 +9,11 @@ IP-CIDR,36.155.182.126/32
 IP-CIDR,36.155.182.57/32
 IP-CIDR,36.155.189.213/32
 IP-CIDR,36.155.189.240/32
-IP-CIDR,42.187.184.49
-IP-CIDR,43.130.30.185
+IP-CIDR,42.187.184.49/32
+IP-CIDR,43.130.30.185/32
 
-dns.weixin.qq.com
-extshort.weixin.qq.com
-minorshort.weixin.qq.com
-shmmsns.qpic.cn
-szmmsns.qpic.cn
+DOMAIN,dns.weixin.qq.com
+DOMAIN,extshort.weixin.qq.com
+DOMAIN,minorshort.weixin.qq.com
+DOMAIN,shmmsns.qpic.cn
+DOMAIN,szmmsns.qpic.cn
