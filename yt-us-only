@@ -1,0 +1,2 @@
+# us
+URL-REGEX,^https:\/\/[\w-]+\.googlevideo\.com\/.+?gcr=us
