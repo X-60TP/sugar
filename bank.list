@@ -111,6 +111,10 @@ DOMAIN,ai.cmbchina.com
 DOMAIN,static.m.cmbchina.com
 DOMAIN,app-zhconf.paas.cmbchina.com
 DOMAIN,zh-meeting-config.paas.cmbchina.com
+DOMAIN,dfp.cmbyc.com
+DOMAIN,fsp.ccc.cmbchina.com
+DOMAIN,mlife.cmbchina.com
+DOMAIN,res.cc.cmbimg.com
 
 # 浦发银行
 DOMAIN,cloud-push.spdb.com.cn
