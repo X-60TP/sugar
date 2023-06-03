@@ -104,6 +104,13 @@ DOMAIN,log.cmbchina.com
 DOMAIN,mobile.cmbchina.com
 DOMAIN,netpay.cmbchina.com
 DOMAIN,sensorsdata.cmbchina.com
+DOMAIN,appinfocdn.cmbimg.com
+DOMAIN,img.mb.cmbimg.com
+DOMAIN,s3gw.cmbimg.com
+DOMAIN,ai.cmbchina.com
+DOMAIN,static.m.cmbchina.com
+DOMAIN,app-zhconf.paas.cmbchina.com
+DOMAIN,zh-meeting-config.paas.cmbchina.com
 
 # 浦发银行
 DOMAIN,cloud-push.spdb.com.cn
