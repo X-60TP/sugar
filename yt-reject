@@ -1,0 +1,5 @@
+# youtube
+URL-REGEX,^https:\/\/(?:www|m)\.youtube\.com.+?(?:pagead|ptracking|activeview|ads)
+URL-REGEX,^https:\/\/(?:s|m)\.youtube\.com\/api\/stats\/.+?(?:adcontext|adformat)
+URL-REGEX,^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1.+?(?:log_event|ad_break)
+URL-REGEX,^https:\/\/m\.youtube\.com\/youtubei\/v1.+?(?:log_event|ad_break)
