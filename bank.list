@@ -34,6 +34,9 @@ DOMAIN,mps.ccb.com
 DOMAIN,touch.ccb.com
 DOMAIN,www.ccb.com
 DOMAIN,yunbusiness.ccb.com
+# ios.bugly.qq.com
+# dlswbr.baidu.com
+# miao.baidu.com
 
 # 苏州银行
 DOMAIN,dfp.suzhoubank.com
@@ -45,6 +48,7 @@ DOMAIN,mps.suzhoubank.com
 DOMAIN,mss.suzhoubank.com
 DOMAIN,xwfx.suzhoubank.com
 DOMAIN,upbp.startbank.com.cn
+# yitong.com.cn
 
 # 工商银行
 DOMAIN,corporbank-pv.icbc.com.cn
@@ -74,6 +78,8 @@ DOMAIN,m1.cmbc.com.cn
 DOMAIN,mnr.cmbc.com.cn
 DOMAIN,static.cmbc.com.cn
 DOMAIN,www.cmbc.com.cn
+# getui.com
+# getui.net
 
 # 招商银行
 DOMAIN,az1authcc.bas.cmbchina.com
@@ -134,6 +140,7 @@ DOMAIN,mbank.spdbccc.com.cn
 DOMAIN,msgp.spdbccc.com.cn
 DOMAIN,serviceonline.spdbccc.com.cn
 DOMAIN,tiap.spdbccc.com.cn
+DOMAIN,image.spdbccc.com.cn
 
 # 华夏银行
 DOMAIN,creditcams.hxb.com.cn
@@ -156,6 +163,15 @@ DOMAIN,ss.creditcard.ecitic.com
 DOMAIN,wap.bank.ecitic.com
 DOMAIN,apiwealthplaza.cfhc.citic
 DOMAIN,wealthplaza.cfhc.citic
+DOMAIN,autoload.bank.ecitic.com
+DOMAIN,mgm.citicbank.com
+DOMAIN,ocsp.dcocsp.cn
+DOMAIN,e.citiccardcdn.citicbank.com
+DOMAIN,m.citiccardcdn.citicbank.com
+DOMAIN,main.citiccardcdn.citicbank.com
+# s95.cnzz.com
+DOMAIN,ss.citiccardcdn.citicbank.com
+DOMAIN,ump.szcdn.creditcard.ecitic.com
 
 # 平安银行
 DOMAIN,a-padn-access.pingan.com.cn
@@ -172,6 +188,9 @@ DOMAIN,rsb.pingan.com.cn
 DOMAIN,rsb2.pingan.com.cn
 DOMAIN,mina-core.pingan.com
 DOMAIN,cdn.sdb.com.cn
+# 202.69.23.211
+# 202.69.23.214
+DOMAIN,padn-access.pingan.com.cn
 
 # 京东
 DOMAIN,gia.jd.com
@@ -194,6 +213,7 @@ DOMAIN,scene.jr.jd.com
 DOMAIN,un.m.jd.com
 DOMAIN,wlmonitor.m.jd.com
 DOMAIN,wlogin.m.jd.com
+DOMAIN,img1.360buyimg.com
 DOMAIN,img10.360buyimg.com
 DOMAIN,img12.360buyimg.com
 DOMAIN,img14.360buyimg.com
@@ -203,11 +223,19 @@ DOMAIN,m.360buyimg.com
 DOMAIN,storage.360buyimg.com
 DOMAIN,aks.jdpay.com
 DOMAIN,community-data.s3-cache-accelerate.cn-north-1.jdcloud-oss.com
+DOMAIN,qdsdk.jd.com
+DOMAIN,gias.jd.com
+DOMAIN,yt.jdpay.com
+DOMAIN,idt.jd.com
+DOMAIN,kjstorage.360buyimg.com
+# s3.ax1x.com
+# direction2.is.autonavi.com
 
 # 银联
 DOMAIN,device.cup.com.cn
 DOMAIN,hotpatch.cup.com.cn
 DOMAIN,nppbase.cup.com.cn
+DOMAIN,nppswitch.cup.com.cn
 DOMAIN,analytics.95516.com
 DOMAIN,antifraud.95516.com
 DOMAIN,device.95516.com
@@ -221,4 +249,7 @@ DOMAIN,xlm-sc.suixingpay.com
 DOMAIN,xyf-gateway.suixingpay.com
 DOMAIN,xyf-mpaw.suixingpay.com
 DOMAIN,www.sxpmpos.com
+DOMAIN,cloudauth-device.aliyuncs.com
+DOMAIN,mgw.mpaas.cn-hangzhou.aliyuncs.com
+
 
