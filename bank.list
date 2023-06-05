@@ -65,19 +65,22 @@ DOMAIN,image.mybank.icbc.com.cn
 DOMAIN,static.mywap2.icbc.com.cn
 
 # 民生银行
+DOMAIN,www.cmbc.com.cn
 DOMAIN,www.cmbc.cn
-DOMAIN,ab.creditcard.cmbc.com.cn
-DOMAIN,m.creditcard.cmbc.com.cn
-DOMAIN,rs.creditcard.cmbc.com.cn
-DOMAIN,td.creditcard.cmbc.com.cn
-DOMAIN,ty.creditcard.cmbc.com.cn
+
 DOMAIN,apmdata.cmbc.com.cn
 DOMAIN,c.cmbc.com.cn
 DOMAIN,gd.cmbc.com.cn
 DOMAIN,m1.cmbc.com.cn
 DOMAIN,mnr.cmbc.com.cn
 DOMAIN,static.cmbc.com.cn
-DOMAIN,www.cmbc.com.cn
+
+DOMAIN,ab.creditcard.cmbc.com.cn
+DOMAIN,m.creditcard.cmbc.com.cn
+DOMAIN,rs.creditcard.cmbc.com.cn
+DOMAIN,td.creditcard.cmbc.com.cn
+DOMAIN,ty.creditcard.cmbc.com.cn
+
 # getui.com
 # getui.net
 
