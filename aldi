@@ -1,1 +1,25 @@
 # aldi
+# DOMAIN,m.aldi.com.cn,DIRECT // Added for: https://m.aldi.com.cn/api/realTime/getPriceStockVan?merchantId=2212200004618235&modeType=1&mpIds=2212220004446378%2C2212220004456222%2C2212220004453160%2C2212220004453974%2C2304140005756520%2C2212220004446312%2C2212220004448152%2C2303280005747454%2C2212220004448643%2C2212220004450265%2C2212220004448380%2C2212220004453014%2C2302240004277261%2C2304070003704559%2C2303280005795838%2C2304070003806953%2C2302270004394626%2C2304140006155601%2C2304100003280988
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/api\/my\/accountSummary,DIRECT // Added for: https://m.aldi.com.cn/api/my/accountSummary?ut=2f176bf3eb0344d7862cf0798f00082b
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/search\/rest\/searchNearbyShopList,DIRECT // Added for: https://m.aldi.com.cn/search/rest/searchNearbyShopList?platformId=3&longitude=121.402696&latitude=31.101097&pageNum=1&pageSize=10&addressId=2206080005426974
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/search\/rest\/searchShopList,DIRECT // Added for: https://m.aldi.com.cn/search/rest/searchShopList?platformId=3&longitude=113.82389&latitude=29.13617&modeType=1&pageNo=1&pageSize=10
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/api\/my\/order\/list,DIRECT // Added for: https://m.aldi.com.cn/api/my/order/list?ut=2f176bf3eb0344d7862cf0798f00082b&companyId=135&orderStatus=1&pageNo=1&nocache=1686012165403&pageSize=10&sysSourceList=INTEGRAL_MALL%2CWX_O2O%2CNDD&modeType=1
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/api\/cart\/addItem$,DIRECT // Added for: https://m.aldi.com.cn/api/cart/addItem
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/search\/rest\/getFrontHideSearchConfig\?configKey=FRONT_CONFIG$,DIRECT // Added for: https://m.aldi.com.cn/search/rest/getFrontHideSearchConfig?configKey=FRONT_CONFIG
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/api\/cart\/checkAddressPoint$,DIRECT // Added for: https://m.aldi.com.cn/api/cart/checkAddressPoint
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/api\/promotion\/coupon\/couponThemeList$,DIRECT // Added for: https://m.aldi.com.cn/api/promotion/coupon/couponThemeList
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/cms\/page\/getAppPage$,DIRECT // Added for: https://m.aldi.com.cn/cms/page/getAppPage
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/api\/cart\/count$,DIRECT // Added for: https://m.aldi.com.cn/api/cart/count
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/ouser-center\/api\/user\/info\/getUserSigned\.do$,DIRECT // Added for: https://m.aldi.com.cn/ouser-center/api/user/info/getUserSigned.do
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/ouser-center\/address\/getAllAddressForm\.do$,DIRECT // Added for: https://m.aldi.com.cn/ouser-center/address/getAllAddressForm.do
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/ad-whale-web\/redEnvelopeRain\/queryActivityParticipateLog\.do$,DIRECT // Added for: https://m.aldi.com.cn/ad-whale-web/redEnvelopeRain/queryActivityParticipateLog.do
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/app\/basics-promotion-service\/coupon\/status\.do$,DIRECT // Added for: https://m.aldi.com.cn/app/basics-promotion-service/coupon/status.do
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/horse-core\/sendUserBehavior\/web\.do$,DIRECT // Added for: https://m.aldi.com.cn/horse-core/sendUserBehavior/web.do
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/ouser-center\/api\/user\/infoMerged\/detail\.do$,DIRECT // Added for: https://m.aldi.com.cn/ouser-center/api/user/infoMerged/detail.do
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/api\/my\/coupon,DIRECT // Added for: https://m.aldi.com.cn/api/my/coupon
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/api\/my\/point,DIRECT // Added for: https://m.aldi.com.cn/api/my/point/list
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/frontier-trade-web\/giftcard,DIRECT // Added for: https://m.aldi.com.cn/frontier-trade-web/giftcard/member/accinfo
+URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/.+merchantId=,DIRECT // Added for: https://m.aldi.com.cn/search/rest/standingPurchaseList?merchantId=2212200004618235
+DOMAIN-SUFFIX,img.cdn.aldi.com.cn,DIRECT // Added for: https://img.cdn.aldi.com.cn/aldiprod/back-cms-web/1681720501944_65.7887358350076_cce89742-9f7c-429a-b0ce-82710619dba7.jpg
+DOMAIN,tracker-prd.aldi.com.cn,REJECT // Added for: https://tracker-prd.aldi.com.cn/hxt?_ua=hmt_3MO8FWLR&_t=i&_z=m
+# URL-REGEX,^https:\/\/m\.aldi\.com\.cn\/.+moduleId=,DIRECT // Added for: https://m.aldi.com.cn/cms/page/module/getModuleRefList.do?pageNo=1&pageSize=10&moduleId=2306020005479324
