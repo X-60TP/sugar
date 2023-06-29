@@ -1,1 +1,12 @@
-1
+DOMAIN-SUFFIX,nflxso.net
+// Added for: occ-0-395-325.1.nflxso.net:443
+DOMAIN-SUFFIX,oca.nflxvideo.net
+// Added for: ipv6-c038-hkg001-ix.1.oca.nflxvideo.net:443
+DOMAIN,push.prod.netflix.com
+DOMAIN,ios.prod.ftl.netflix.com
+DOMAIN,ios.prod.cloud.netflix.com
+DOMAIN,ios.ngp.prod.cloud.netflix.com
+DOMAIN,ichnaea-web.netflix.com
+DOMAIN,appboot.netflix.com
+DOMAIN,api.fast.com 
+IP-CIDR,8.8.8.8/32,no-resolve
