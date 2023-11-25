@@ -1,0 +1,14 @@
+#!name=Netflix YouTube DualSubs SubTrans
+#!desc=Netflix & YouTube Dual Subtitles | Subtitle Translate Add-ons
+
+[Script]
+Netflix-DualSubs = type=http-response,pattern=^https:\/\/[\w-]+\.\d\.oca\.nflxvideo\.net\/\?o=\d&v=\d+&e=\d+&t=,requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
+
+YouTube-DualSubs = type=http-response,pattern=^https:\/\/www\.youtube\.com\/api\/timedtext,requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
+
+Netflix-DualSubs-Settings = type=http-request,pattern=^https:\/\/setting\.nflxvideo\.net\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
+
+YouTube-DualSubs-Settings = type=http-request,pattern=^https:\/\/setting\.youtube\.com\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
+
+[MITM]
+hostname = %APPEND% *.oca.nflxvideo.net, *.youtube.com
