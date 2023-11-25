@@ -1,25 +1,141 @@
 /*
     Dualsub for Surge by Neurogram
-
+ 
         - Disney+, Star+, HBO Max, Prime Video, YouTube official bilingual subtitles
         - Disney+, Star+, HBO Max, Hulu, Netflix, Paramount+, Prime Video, etc. external subtitles
         - Disney+, Star+, HBO Max, Hulu, Netflix, Paramount+, Prime Video, etc. machine translation bilingual subtitles (Google, DeepL)
         - Customized language support
-
+ 
     Manual:
         Setting tool for Shortcuts: https://www.icloud.com/shortcuts/8ec4a2a3af514282bf27a11050f39fc2
 
+        Surge:
+
+        [Script]
+
+        // all in one
+        Dualsub = type=http-response,pattern=^http.+(media.(dss|star)ott|manifests.v2.api.hbo|hbomaxcdn|nflxvideo|cbs(aa|i)video|cloudfront|akamaihd|avi-cdn|huluim|youtube).(com|net)\/(.+\.vtt($|\?m=\d+)|.+-all-.+\.m3u8.*|hls\.m3u8.+|\?o=\d+&v=\d+&e=.+|\w+\/2\$.+\/[a-zA-Z0-9-]+\.m3u8|api\/timedtext.+),requires-body=1,max-size=0,timeout=30,script-path=Dualsub.js
+        Dualsub-setting = type=http-request,pattern=^http.+(setting|general).(media.dssott|hbomaxcdn|nflxvideo|youtube|cbsivideo|cloudfront|huluim).(com|net)\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=Dualsub.js
+
+        // individual
+        DisneyPlus-Dualsub = type=http-response,pattern=https:\/\/.+media.(dss|star)ott.com\/ps01\/disney\/.+(\.vtt|-all-.+\.m3u8.*),requires-body=1,max-size=0,timeout=30,script-path=Dualsub.js
+        DisneyPlus-Dualsub-Setting = type=http-request,pattern=https:\/\/setting.media.dssott.com\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=Dualsub.js
+ 
+        HBO-Max-Dualsub = type=http-response,pattern=https:\/\/(manifests.v2.api.hbo.com|.+hbomaxcdn.com)\/(hls.m3u8.+|video.+\.vtt),requires-body=1,max-size=0,timeout=30,script-path=Dualsub.js
+        HBO-Max-Dualsub-Setting = type=http-request,pattern=https:\/\/setting.hbomaxcdn.com\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=Dualsub.js
+
+        Hulu-Dualsub = type=http-response,pattern=^http.+huluim.com\/.+\.vtt$,requires-body=1,max-size=0,timeout=30,script-path=Dualsub.js
+        Hulu-Dualsub-Setting = type=http-request,pattern=https:\/\/setting.huluim.com\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=Dualsub.js
+
+        Netflix-Dualsub = type=http-response,pattern=https:\/\/.+nflxvideo.net\/\?o=\d+&v=\d+&e=.+,requires-body=1,max-size=0,timeout=30,script-path=Dualsub.js
+        Netflix-Dualsub-Setting = type=http-request,pattern=https:\/\/setting.nflxvideo.net\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=Dualsub.js
+
+        ParamountPlus-Dualsub = type=http-response,pattern=https:\/\/.+cbs(aa|i)video.com\/.+\.vtt(\?m=\d+)*,requires-body=1,max-size=0,timeout=30,script-path=Dualsub.js
+        ParamountPlus-Dualsub-Setting = type=http-request,pattern=https:\/\/setting.cbsivideo.com\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=Dualsub.js
+
+        Prime-Video-Dualsub = type=http-response,pattern=https:\/\/.+(cloudfront|akamaihd|avi-cdn).net\/(.+\.vtt|\w+\/2\$.+\/[a-zA-Z0-9-]+\.m3u8),requires-body=1,max-size=0,timeout=30,script-path=Dualsub.js
+        Prime-Video-Dualsub-Setting = type=http-request,pattern=https:\/\/setting.cloudfront.net\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=Dualsub.js
+
+        YouTube-Dualsub = type=http-response,pattern=https:\/\/www.youtube.com\/api\/timedtext.+,requires-body=1,max-size=0,timeout=30,script-path=Dualsub.js
+        YouTube-Dualsub-Setting = type=http-request,pattern=https:\/\/setting.youtube.com\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=Dualsub.js
+
+        [MITM]
+        hostname = *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com
+
+    Author:
+        Telegram: Neurogram
+        GitHub: Neurogram-R
 */
 
 let url = $request.url
 let headers = $request.headers
 
 let default_settings = {
+    Disney: {
+        type: "Official", // Official, Google, DeepL, External, Disable
+        lang: "English [CC]",
+        sl: "auto",
+        tl: "English [CC]",
+        line: "s", // f, s
+        dkey: "null", // DeepL API key
+        s_subtitles_url: "null",
+        t_subtitles_url: "null",
+        subtitles: "null",
+        subtitles_type: "null",
+        subtitles_sl: "null",
+        subtitles_tl: "null",
+        subtitles_line: "null",
+        external_subtitles: "null"
+    },
+    HBOMax: {
+        type: "Official", // Official, Google, DeepL, External, Disable
+        lang: "English CC",
+        sl: "auto",
+        tl: "en-US SDH",
+        line: "s", // f, s
+        dkey: "null", // DeepL API key
+        s_subtitles_url: "null",
+        t_subtitles_url: "null",
+        subtitles: "null",
+        subtitles_type: "null",
+        subtitles_sl: "null",
+        subtitles_tl: "null",
+        subtitles_line: "null",
+        external_subtitles: "null"
+    },
+    Hulu: {
+        type: "Google", // Google, DeepL, External, Disable
+        lang: "English",
+        sl: "auto",
+        tl: "en",
+        line: "s", // f, s
+        dkey: "null", // DeepL API key
+        s_subtitles_url: "null",
+        t_subtitles_url: "null",
+        subtitles: "null",
+        subtitles_type: "null",
+        subtitles_sl: "null",
+        subtitles_tl: "null",
+        subtitles_line: "null",
+        external_subtitles: "null"
+    },
     Netflix: {
         type: "Google", // Google, DeepL, External, Disable
         lang: "English",
         sl: "auto",
         tl: "en",
+        line: "s", // f, s
+        dkey: "null", // DeepL API key
+        s_subtitles_url: "null",
+        t_subtitles_url: "null",
+        subtitles: "null",
+        subtitles_type: "null",
+        subtitles_sl: "null",
+        subtitles_tl: "null",
+        subtitles_line: "null",
+        external_subtitles: "null"
+    },
+    Paramount: {
+        type: "Google", // Google, DeepL, External, Disable
+        lang: "English",
+        sl: "auto",
+        tl: "en",
+        line: "s", // f, s
+        dkey: "null", // DeepL API key
+        s_subtitles_url: "null",
+        t_subtitles_url: "null",
+        subtitles: "null",
+        subtitles_type: "null",
+        subtitles_sl: "null",
+        subtitles_tl: "null",
+        subtitles_line: "null",
+        external_subtitles: "null"
+    },
+    PrimeVideo: {
+        type: "Official", // Official, Google, DeepL, External, Disable
+        lang: "English [CC]",
+        sl: "auto",
+        tl: "English [CC]",
         line: "s", // f, s
         dkey: "null", // DeepL API key
         s_subtitles_url: "null",
@@ -64,7 +180,12 @@ if (!settings) settings = default_settings
 if (typeof (settings) == "string") settings = JSON.parse(settings)
 
 let service = ""
+if (url.match(/(dss|star)ott.com/)) service = "Disney"
+if (url.match(/hbo(maxcdn)*.com/)) service = "HBOMax"
+if (url.match(/huluim.com/)) service = "Hulu"
 if (url.match(/nflxvideo.net/)) service = "Netflix"
+if (url.match(/cbs(aa|i)video.com/)) service = "Paramount"
+if (url.match(/(cloudfront|akamaihd|avi-cdn).net/)) service = "PrimeVideo"
 if (url.match(/general.media/)) service = "General"
 if (url.match(/youtube.com/)) service = "YouTube"
 
@@ -165,7 +286,59 @@ if (service == "YouTube") {
 
 let subtitles_urls_data = setting.t_subtitles_url
 
+if (setting.type == "Official" && url.match(/\.m3u8/)) {
+    settings[service].t_subtitles_url = "null"
+    $persistentStore.write(JSON.stringify(settings))
 
+    let patt = new RegExp(`TYPE=SUBTITLES.+NAME="${setting.tl.replace(/(\[|\]|\(|\))/g, "\\$1")}.+URI="([^"]+)`)
+
+    if (body.match(patt)) {
+
+        let host = ""
+        if (service == "Disney") host = url.match(/https.+media.(dss|star)ott.com\/ps01\/disney\/[^\/]+\//)[0]
+
+        let subtitles_data_link = `${host}${body.match(patt)[1]}`
+
+        if (service == "PrimeVideo") {
+            correct_host = subtitles_data_link.match(/https:\/\/(.+(cloudfront|akamaihd|avi-cdn).net)/)[1]
+            headers.Host = correct_host
+        }
+
+        let options = {
+            url: subtitles_data_link,
+            headers: headers
+        }
+
+        $httpClient.get(options, function (error, response, data) {
+            let subtitles_data = ""
+            if (service == "Disney") subtitles_data = data.match(/.+-MAIN.+\.vtt/g)
+            if (service == "HBOMax") subtitles_data = data.match(/http.+\.vtt/g)
+            if (service == "PrimeVideo") subtitles_data = data.match(/.+\.vtt/g)
+
+            if (service == "Disney") host = host + "r/"
+            if (service == "PrimeVideo") host = subtitles_data_link.match(/https.+\//)[0]
+
+            if (subtitles_data) {
+                subtitles_data = subtitles_data.join("\n")
+                if (service == "Disney" || service == "PrimeVideo") subtitles_data = subtitles_data.replace(/(.+)/g, `${host}$1`)
+                settings[service].t_subtitles_url = subtitles_data
+                $persistentStore.write(JSON.stringify(settings))
+            }
+
+            if (service == "Disney" && subtitles_data_link.match(/.+-MAIN.+/) && data.match(/,\nseg.+\.vtt/g)) {
+                subtitles_data = data.match(/,\nseg.+\.vtt/g)
+                let url_path = subtitles_data_link.match(/\/r\/(.+)/)[1].replace(/\w+\.m3u8/, "")
+                settings[service].t_subtitles_url = subtitles_data.join("\n").replace(/,\n/g, hots + url_path)
+                $persistentStore.write(JSON.stringify(settings))
+            }
+
+            $done({})
+        })
+
+    }
+
+    if (!body.match(patt)) $done({})
+}
 
 if (url.match(/\.(web)?vtt/) || service == "Netflix" || service == "General") {
     if (service != "Netflix" && url == setting.s_subtitles_url && setting.subtitles != "null" && setting.subtitles_type == setting.type && setting.subtitles_sl == setting.sl && setting.subtitles_tl == setting.tl && setting.subtitles_line == setting.line) $done({ body: setting.subtitles })
