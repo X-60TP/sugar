@@ -1,5 +1,5 @@
 #!name=u2be
-#!desc=u2be ad removal. 
+#!desc=u2be ad all
 #20241110
 
 [Rule]
@@ -7,15 +7,19 @@ AND,((DOMAIN-SUFFIX,google.com),(PROTOCOL,UDP)),REJECT-NO-DROP
 AND,((DOMAIN-SUFFIX,youtube.com),(PROTOCOL,UDP)),REJECT-NO-DROP
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT-NO-DROP
 AND,((DOMAIN-SUFFIX,googleapis.com),(PROTOCOL,UDP)),REJECT-NO-DROP
-URL-REGEX,^https:\/\/[\w-]+\.googlevideo\.com\/videoplayback\?.+?ctier=L,REJECT-TINYGIF
+#URL-REGEX,^https:\/\/[\w-]+\.googlevideo\.com\/videoplayback\?.+?ctier=L,REJECT-TINYGIF
 # https://rr2---sn-o097znss.googlevideo.com/videoplayback?expire=1730918442&ei=yWMrZ4fZO_z5sfIPpeHkiAY&ip=194.246.34.144&id=o-AAb1YmNDW0QjIC3vA8h0F2BQoMWeniHf8pqR5kbEo1UN&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ==&met=1730896842,&mh=x5&mm=31,29&mn=sn-o097znss,sn-a5meknzr&ms=au,rdu&mv=m&mvi=2&pl=24&rms=au,au&ctier=L&...
 URL-REGEX,^https:\/\/[\w-]+\.googlevideo\.com\/videoplayback\/.+?ctier\/L,REJECT-TINYGIF
 # https://r2---sn-a5msenl7.googlevideo.com/videoplayback/expire/1731259776/ei/IJkwZ-rUFb_8sfIP2fzn-Aw/ip/194.246.34.144/id/o-ALxnp0TsfacahijHdMf8Y9dJOdGlegnItLyR4rk7BQhU/itag/247/source/youtube/requiressl/yes/xpc/EgVo2aDSNQ==/met/1731238176,/mh/dr/mm/31,29/mn/sn-o097znzr,sn-a5msenl7/ms/au,rdu/mv/m/mvi/2/pl/24/rms/au,au/ctier/L/...
 #URL-REGEX,^https:\/\/[\w-]+\.googlevideo\.com\/videoplayback\/.+?\/ctier\/L\/,REJECT-TINYGIF
+#URL-REGEX,^https?:\/\/[\w-]+\.googlevideo\.com\/.+\/ctier\/(?!A),REJECT-TINYGIF
 URL-REGEX,^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.+?oad=,REJECT-TINYGIF
 # https://rr5---sn-oguelney.googlevideo.com/initplayback?source=youtube&oeis=1&c=IOS&oad=5500&...
 # [\w-]+:[A-Za-z0-9_]&-,匹配1或多
 # .+?:任意 匹配1或多 非贪婪
+#URL-REGEX,^https?:\/\/[\w-]+\.googlevideo\.com\/.+&oad,REJECT-TINYGIF
+#URL-REGEX,^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.+?=sn-npoe,REJECT-TINYGIF
+#https://rr5---sn-npoe7nek.googlevideo.com/initplayback?source=youtube&itag=0&pvi=0&pai=0&owc=yes&c=IOS&id=00000000000004a2&cms_redirect=yes&met=1731268464,&mh=w0&mip=141.98.234.104&mm=31&mn=sn-npoe7nek&ms=au&mt=1731268143&mv=m&mvi=5&pl=27&rms=au,au
 URL-REGEX,^https:\/\/www\.youtube\.com\/ptracking,REJECT
 # https://www.youtube.com/ptracking?...
 URL-REGEX,^https:\/\/www\.youtube\.com\/pagead,REJECT
@@ -42,13 +46,20 @@ URL-REGEX,^https:\/\/play\.googleapis\.com\/log,REJECT
 DOMAIN,app-analytics-services.com,REJECT
 DOMAIN,sessions.bugsnag.com,REJECT
 DOMAIN,tr.iadsdk.apple.com,REJECT
+DOMAIN-SUFFIX,googleads.g.doubleclick.net,REJECT
+DOMAIN,yt3.ggpht.com,PROXY
+DOMAIN,i.ytimg.com,PROXY
+DOMAIN-SUFFIX,googleapis.com,PROXY
+DOMAIN-SUFFIX,googlevideo.com,PROXY
+DOMAIN-SUFFIX,youtube.com,PROXY
+DOMAIN-SUFFIX,google.com,PROXY
 
 [URL Rewrite]
 # This is NOT a typo
 ctier=[A-Z] citer=A 302
 
 [Script]
-u2bead = type=http-request,pattern=^https?:\/\/.+?\.googlevideo\.com\/.+(\/|&amp;)(oad|ctier)(\/|=)(?!A),script-path=https://raw.githubusercontent.com/X-60TP/sugar/refs/heads/main/u2be01.js
+u2beAd = type=http-request,script-path=https://raw.githubusercontent.com/X-60TP/sugar/refs/heads/main/u2be01.js,pattern=^https:\/\/[\w-]+\.googlevideo\.com\/.+?(\/|&)(oad|ctier)(\/|=)(?!A),max-size=0,timeout=10,script-update-interval=0,enable=true
 
 [MITM]
 hostname = %APPEND% *.google.com, *.youtube.com, *.googlevideo.com, *.googleapis.com
